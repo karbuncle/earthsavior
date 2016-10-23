@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uploads</title>
+    <script type="text/javascript">
+      function submit() {
+        var p = document.getElementById('popup');
+        p.style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/wireframe">Home</a></li>
+      <li><a href="/wireframe/feedback.html">Feedback</a></li>
+    </ul>
+    
+    <h1>Today is ##/##/##</h1>
+
+    <div>
+      Trash
+      <div style="border: 1px solid black; width: 200px; height: 200px; line-height: 200px; text-align: center;">Upload</div>
+      Items
+      <select>
+        <option>Orange Peels</option>
+        <option>Pizza Box</option>
+        <option>Burrito Wrapper</option>
+        <option>Dead Rat</option>
+      </select>
+      <button onclick="submit()">Submit</button>
+    </div>
+
+    <hr/>
+
+    <div>
+      Recycling
+      <div style="border: 1px solid black; width: 200px; height: 200px; line-height: 200px; text-align: center;">Upload</div>
+      Items
+      <select>
+        <option>Bread Wrapper</option>
+        <option>Scratch Paper</option>
+      </select>
+      <button onclick="submit()">Submit</button>
+    </div>
+
+    <div id="popup" style="display: none; position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+            background: white; border: 1px solid black; 
+            width: 500px; height: 500px; text-align: center;">
+      <span style="line-height: 450px; vertical-align: middle; display: block;">Thanks for your submission! We'll get back to you soon.</span>
+      <button onclick="this.parentElement.style.display = 'none'">Close</button>
+    </div>
+  </body>
+</html>

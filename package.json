@@ -1,0 +1,21 @@
+{
+  "name": "earthsavior",
+  "version": "1.0.0",
+  "description": "Try to sort your disposal to save the Earth!",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": ""
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "handlebars": "^4.0.5",
+    "hbs": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karbuncle/earthsavior.git"
+  },
+  "author": "Team 1",
+  "license": "MIT"
+}
