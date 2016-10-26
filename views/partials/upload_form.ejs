@@ -1,0 +1,39 @@
+<form class="row" id="recycle-l">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-image green darken-4 file-field input-field center-align">
+        <input type="file" name="recycle-img" />
+        <div class="hide file-path-wrapper">
+          <input class="file-path validate" type="text" />
+        </div>
+        <div class="image-upload">
+          <i class="material-icons green-text lighten-4 valign">photo</i>
+        </div>
+        <img class="hide" />
+        <div class="card-title">
+          Today is <u><%= (new Date()).toLocaleDateString() %></u> 
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="input-field">
+          <select id="option">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option>Option 5</option>
+            <option>Option 6</option>
+          </select>
+          <label for="option">What is this?</label>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description" class="materialize-textarea"></textarea>
+            <label for="description">Comment</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="right btn-large btn-flat waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+  </div>
+</form>

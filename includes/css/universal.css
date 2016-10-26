@@ -8,7 +8,17 @@ main {
 	flex: 1 0 auto;
 }
 
+/* home-page icons */
 .promo i.material-icons {
-  font-size: 100pt;
   display: block;
+}
+
+/* image upload placeholder */
+.image-upload {
+  height: 200px;
+}
+
+.image-upload i.material-icons {
+  width: 100%;
+  font-size: 100pt;
 }

@@ -1,3 +1,23 @@
+<% 
+	var menuItems = [
+		{ 
+			"text": "Home",
+			"icon": "home",
+			"link": "/",
+			"active": activeItem == "home"
+		}, {
+			"text": "Uploads",
+			"icon": "file_upload",
+			"link": "/uploads",
+			"active": activeItem == "uploads"
+		}, {
+			"text": "Feedback",
+			"icon": "feedback",
+			"link": "/wireframe/feedback.html",
+			"active": activeItem == "feedback"
+		}
+	];
+%>
 <html>
 	<head>
 		<title><%= title %></title>
@@ -13,7 +33,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s12">
-						<h1>EarthSavior</h1>
+						<h1 class="valign-wrapper"><i class="material-icons medium valign">public</i>EarthSavior</h1>
 						<h6>Changing the future begins here</h6>
 					</div>
 				</div>
@@ -22,16 +42,16 @@
 				<div class="container">
 					<a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 					<ul class="navbar hide-on-med-and-down">
-						<li><a href="/"><i class="material-icons left">home</i>Home</a></li>
-						<li><a href="/wireframe/uploads.html"><i class="material-icons left">file_upload</i>Uploads</a></li>
-						<li><a href="/wireframe/feedback.html"><i class="material-icons left">feedback</i>Feedback</a></li>
+					<% menuItems.forEach(function(item) { %>
+						<li<%- item.active ? ' class="active"' : '' %>><a href="<%= item.link %>"><i class="material-icons left"><%= item.icon %></i><%= item.text %></a></li>
+					<% }); %>
 					</ul>
 				</div>
 			</nav>
 			<ul id="side-nav" class="side-nav">
-				<li><a href="/"><i class="material-icons">home</i>Home</a></li>
-				<li><a href="/wireframe/uploads.html"><i class="material-icons">file_upload</i>Uploads</a></li>
-				<li><a href="/wireframe/feedback.html"><i class="material-icons">feedback</i>Feedback</a></li>
+				<% menuItems.forEach(function(item) { %>
+					<li<%- item.active ? ' class="active"' : '' %>><a href="<%= item.link %>"><i class="material-icons left"><%= item.icon %></i><%= item.text %></a></li>
+				<% }); %>
 			</ul>
 		</header>
-		<main class="container">
+		<main>

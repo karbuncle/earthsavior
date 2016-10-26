@@ -1,0 +1,28 @@
+<%- include('./partials/header', { activeItem: "uploads" } ); %>
+<div class="row">
+  <!-- tab bar -->
+    <ul class="tabs hide-on-large-only">
+      <li class="tab col s6"><a href="#garbage">Garbage</a></li>
+      <li class="tab col s6"><a href="#recycle">Recycle</a></li>
+    </ul>
+
+  <div id="garbage" class="col s12 hide-on-large-only">
+    <%- include ./partials/upload_form.ejs %>
+  </div>
+  <div id="recycle" class="col s12 hide-on-large-only">
+    <%- include ./partials/upload_form.ejs %>
+  </div>
+</div>
+<div class="container">
+  <div class="row hide-on-med-and-down">
+    <div class="col m6">
+      <h2 class="center">Garbage</h2>
+      <%- include ./partials/upload_form.ejs %>
+    </div>
+    <div class="col m6">
+      <h2 class="center">Recycling</h2>
+      <%- include ./partials/upload_form.ejs %>
+    </div>
+  </div>
+</div>
+<%- include ./partials/footer %>
