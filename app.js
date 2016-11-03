@@ -5,6 +5,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.use('/wireframe', express.static(__dirname + '/wireframe'));
+app.use('/data', express.static(__dirname + '/data'));
 app.use(express.static(__dirname + '/includes'));
 
 app.set('views', __dirname + '/views');

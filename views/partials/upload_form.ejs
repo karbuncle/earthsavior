@@ -1,20 +1,24 @@
-<form class="row" id="recycle-l">
+<form class="row upload-form">
   <div class="col s12">
     <div class="card">
-      <div class="card-image green darken-4 file-field input-field center-align">
-        <input type="file" name="recycle-img" />
+      <div class="card-image green darken-4 file-field input-field center-align upload-card">
         <div class="hide file-path-wrapper">
-          <input class="file-path validate" type="text" />
+          <input class="file-path" type="text" />
         </div>
         <div class="image-upload">
-          <i class="material-icons green-text lighten-4 valign">photo</i>
+          <i class="material-icons display green-text lighten-4 valign">photo</i>
         </div>
-        <img class="hide" />
+        <img class="image-preview hide" />
+				<div class="overlay image-preview-overlay hide"></div>
         <div class="card-title">
           Today is <u><%= (new Date()).toLocaleDateString() %></u> 
         </div>
+        <input type="file"/>
       </div>
       <div class="card-content">
+				<div class="row hide message red-text">
+					<em>You need to choose an image to upload.</em>
+				</div>
         <div class="input-field">
           <select id="option">
             <option>Option 1</option>

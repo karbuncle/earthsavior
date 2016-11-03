@@ -1,0 +1,26 @@
+<%- include('./partials/header', { activeItem: "forum" } ); %>
+<div class="container">
+  <div id="spinner" class="valign-in-overlay preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div> 
+  <div class="row" id="forum"></div>
+</div>
+<div id="message" class="modal">
+  <div class="modal-content">
+    <h4>Oops!</h4>
+    <p>We were unable to fetch the forum threads. Please try again.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Retry</a>
+  </div>
+</div>
+<script src="/js/forum.js"></script>
+<%- include ./partials/footer %>

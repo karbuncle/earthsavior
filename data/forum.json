@@ -1,0 +1,31 @@
+[{
+	"date": "10/29/2016",
+	"title": "Pizza box",
+	"description": "This is a clean pizza box",
+	"type": "recycle",
+	"image": "/data/uploads/pizzabox.jpg",
+	"comments": [{
+    "date": "10/30/2016",
+    "username": "apple",
+    "content": "nice pizza box :)"
+  }, {
+    "date": "10/30/2016",
+    "username": "banana",
+    "content": "nice pizza box :)"
+  }]
+}, {
+	"date": "10/29/2016",
+	"title": "Pizza box",
+	"description": "This is a clean pizza box",
+	"type": "garbage",
+	"image": "/data/uploads/pizzabox.jpg",
+	"comments": [{
+    "date": "10/30/2016",
+    "username": "apple",
+    "content": "nice pizza box :)"
+  }, {
+    "date": "10/30/2016",
+    "username": "banana",
+    "content": "nice pizza box :)"
+  }]
+}]

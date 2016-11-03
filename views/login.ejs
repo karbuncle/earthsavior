@@ -1,0 +1,32 @@
+<%- include('./partials/header', { "activeItem" : null } ); %>
+<div class="container">
+	<h3 class="center-align">Welcome</h3>
+	<form id="login-form" class="row">
+		<div class="col s12 m6 push-m3">
+			<div class="card-panel light-green lighten-5">
+				<div class="row center-align">
+					<i class="material-icons display grey-text text-darken-3">face</i>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" placeholder="Username" id="username" required="" aria-required="true" />
+						<label for="username" data-error="Please enter your username" >Username</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="password" placeholder="Password" id="password" required />
+						<label for="password" data-error="Please enter your password">Password</label>
+					</div>
+				</div>
+				<div class="row right-align">
+					<button class="btn waves-effect waves-light light-green darken-3" type="submit">Login</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<%- include ./partials/footer %>
+
+
+
