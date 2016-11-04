@@ -14,15 +14,15 @@
     "content": "nice pizza box :)"
   }]
 }, {
-	"date": "10/13/2016",
-	"title": "Pizza box",
-	"description": "This is a clean pizza box",
+	"date": "10/29/2016",
+	"title": "Pizza box (dirty)",
+	"description": "This is a a dirty and unrecyclable pizza box",
 	"type": "garbage",
-	"image": "/data/uploads/pizzabox.jpg",
+	"image": "/data/uploads/dirtypizzabox.jpg",
 	"comments": [{
     "date": "10/30/2016",
-    "username": "apple",
-    "content": "nice pizza box :)"
+    "username": "Cubsfan1990",
+    "content": "good choice, too many people incorrectly recycle those"
   }, {
     "date": "10/30/2016",
     "username": "banana",
@@ -81,7 +81,51 @@
     "content": "Shouldn't this go in the recycling?"
   }, {
     "date": "10/5/2016",
-    "username": "banana",
-    "content": "Thats styrofoam!!"
+    "username": "annoyingorange",
+    "content": "bet that pizza was real tasty ;)"
   }]
+}, {
+	"date": "10/28/2016",
+	"title": "milk jug",
+	"description": "i drank some milk for the first time and didn't like it so i threw the jug away",
+	"type": "garbage",
+	"image": "/data/uploads/milkjug.jpg",
+	"comments": [{
+    "date": "10/28/2016",
+    "username": "milkmyjugs",
+    "content": "That's a waste, you can empty+rinse it out and then recycle!"
+  }, {
+    "date": "10/28/2016",
+    "username": "RogerRevelle",
+    "content": "^^"
+  }, {
+	  "date": "10/28/2016",
+	  "username": "Apple",
+	  "content": "^^^ what they said"
+  }]
+}, {
+	"date": "10/28/2016",
+	"title": "Nasty Fruit",
+	"description": "These dropped off my neighbor's tree so I threw them in the trash. That's cool right?",
+	"type": "garbage",
+	"image": "/data/uploads/nastyfruit.jpg",
+	"comments": [{
+	"date": "10/28/2016",
+	"username": "POON_GOON",
+	"content": "dude ew. but yea those can go in the garbage if you don't have a compost/yard waste bin."
+}]
+}, {
+	"date": "10/27/2016"
+	"title": "Yogurt drink",
+	"description": "I always throw these in the recycling but someone told me I shouldn't! What do I do with these?",
+	"type": "recycle",
+	"image": "/data/uploads/yogurt.jpg",
+	"comments": [{
+	"date": "10/28/2016",
+	"username": "recyclingryan204",
+	"content": "your friend was right, that kind of yogurt sticks to the inside and makes recycling hard. unless you scour the inside with a brush, just toss it."
+}]
+
+
+
 }]
