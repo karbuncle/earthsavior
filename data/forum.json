@@ -47,7 +47,7 @@
   "date": "10/29/2016",
   "title": "Newspaper",
   "description": "This is a last weeks newspaper",
-  "type": "recyc;e",
+  "type": "recycle",
   "image": "/data/uploads/pile-of-newspapers.jpg",
   "comments": [{
     "date": "10/30/2016",
@@ -87,6 +87,10 @@
     "date": "10/5/2016",
     "username": "annoyingorange",
     "content": "bet that pizza was real tasty ;)"
+  }, {
+    "date": "10/5/2016",
+    "username": "annoyingorange",
+    "content": "I actually meant ramen"
   }]
 }, {
 	"date": "10/28/2016",
@@ -110,7 +114,7 @@
 }, {
 	"date": "10/28/2016",
 	"title": "Nasty Fruit",
-	"description": "These dropped off my neighbor's tree so I threw them in the trash. That's cool right?",
+	"description": "These dropped off my neighbor's tree so I threw them in the trash. cool?",
 	"type": "garbage",
 	"image": "/data/uploads/nastyfruit.jpg",
 	"comments": [{
