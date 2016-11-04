@@ -21,7 +21,7 @@ jQuery(function ($) {
 
     var $card = $('<div></div>')
           .addClass([
-              'card small', 
+              'card medium', 
               card.type == 'recycle' ? 
                 'light-green lighten-4' : 
                 'brown darken-2 white-text'
