@@ -14,7 +14,7 @@
     "content": "nice pizza box :)"
   }]
 }, {
-	"date": "10/29/2016",
+	"date": "10/13/2016",
 	"title": "Pizza box",
 	"description": "This is a clean pizza box",
 	"type": "garbage",
@@ -27,5 +27,61 @@
     "date": "10/30/2016",
     "username": "banana",
     "content": "nice pizza box :)"
+  }, {
+  "date": "10/10/2016",
+  "title": "Soda Can",
+  "description": "This is a clean pizza box",
+  "type": "recycle",
+  "image": "/data/uploads/1011-2.jpg",
+  "comments": [{
+    "date": "10/10/2016",
+    "username": "apple",
+    "content": "a generic soda can"
+  }, {
+    "date": "10/30/2016",
+    "username": "banana",
+    "content": "are you sure that goes in recycle?"
+  }, {
+  "date": "10/29/2016",
+  "title": "Newspaper",
+  "description": "This is a last weeks newspaper",
+  "type": "recyc;e",
+  "image": "/data/uploads/pile-of-newspapers.jpg",
+  "comments": [{
+    "date": "10/30/2016",
+    "username": "apple",
+    "content": "This sundays newspaper"
+  }, {
+    "date": "10/30/2016",
+    "username": "banana",
+    "content": "mysterious newspaper"
+  }, {
+  "date": "10/12/2016",
+  "title": "Banana peel",
+  "description": "The remnants of a banana I ate",
+  "type": "garbage",
+  "image": "/data/uploads/the-benefits-of-banana-banana-peel.jpg",
+  "comments": [{
+    "date": "10/30/2016",
+    "username": "apple",
+    "content": "oh wow a banana peel"
+  }, {
+    "date": "10/30/2016",
+    "username": "banana",
+    "content": "thats my peel!"
+  }, {
+  "date": "9/23/2016",
+  "title": "Cup Ramen",
+  "description": "The left over of my Cup Ramen",
+  "type": "garbage",
+  "image": "/data/uploads/cupnoodle-s.jpg",
+  "comments": [{
+    "date": "10/2/2016",
+    "username": "apple",
+    "content": "Shouldn't this go in the recycling?"
+  }, {
+    "date": "10/5/2016",
+    "username": "banana",
+    "content": "Thats styrofoam!!"
   }]
 }]
