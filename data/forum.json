@@ -39,9 +39,17 @@
     "username": "apple",
     "content": "a generic soda can"
   }, {
-    "date": "10/30/2016",
+    "date": "10/15/2016",
     "username": "banana",
     "content": "are you sure that goes in recycle?"
+  }, {
+    "date": "10/19/2016",
+    "username": "apple",
+    "content": "btw, you sure that's a pizza box?"
+  }, {
+    "date": "10/20/2016",
+    "username": "banana",
+    "content": "it apparently is not a pizza box. lol!"
   }]
 }, {
   "date": "10/29/2016",
