@@ -33,132 +33,132 @@
 		"approval": "neutral"
   }]
 }, {
-  "date": "10/10/2016",
+  "date": "10/28/2016",
   "title": "Soda Can",
   "description": "This is a clean pizza box",
   "type": "recycle",
   "image": "/data/uploads/1011-2.jpg",
   "comments": [{
-    "date": "10/10/2016",
+    "date": "10/28/2016",
     "username": "apple",
     "content": "a generic soda can",
 		"approval": "neutral"
   }, {
-    "date": "10/15/2016",
+    "date": "10/28/2016",
     "username": "banana",
     "content": "are you sure that goes in recycle?",
 		"approval": "disapprove"
   }, {
-    "date": "10/19/2016",
+    "date": "10/28/2016",
     "username": "apple",
     "content": "btw, you sure that's a pizza box?",
 		"approval": "neutral"
   }, {
-    "date": "10/20/2016",
+    "date": "10/29/2016",
     "username": "banana",
     "content": "it apparently is not a pizza box. lol!",
 		"approval": "neutral"
   }]
 }, {
-  "date": "10/29/2016",
+  "date": "10/28/2016",
   "title": "Newspaper",
   "description": "This is a last weeks newspaper",
   "type": "recycle",
   "image": "/data/uploads/pile-of-newspapers.jpg",
   "comments": [{
-    "date": "10/30/2016",
+    "date": "10/29/2016",
     "username": "apple",
     "content": "This sundays newspaper",
 		"approval": "neutral"
   }, {
-    "date": "10/30/2016",
+    "date": "10/29/2016",
     "username": "banana",
     "content": "mysterious newspaper",
 		"approval": "neutral"
   }]
 }, {
-  "date": "10/12/2016",
+  "date": "10/25/2016",
   "title": "Banana peel",
   "description": "The remnants of a banana I ate",
   "type": "garbage",
   "image": "/data/uploads/the-benefits-of-banana-banana-peel.jpg",
   "comments": [{
-    "date": "10/30/2016",
+    "date": "10/26/2016",
     "username": "apple",
     "content": "oh wow a banana peel",
 		"approval": "neutral"
   }, {
-    "date": "10/30/2016",
+    "date": "10/26/2016",
     "username": "banana",
     "content": "thats my peel!",
 		"approval": "neutral"
   }]
 }, {
-  "date": "9/23/2016",
+  "date": "10/23/2016",
   "title": "Cup Ramen",
   "description": "The left over of my Cup Ramen",
   "type": "garbage",
   "image": "/data/uploads/cupnoodle-s.jpg",
   "comments": [{
-    "date": "10/2/2016",
+    "date": "10/23/2016",
     "username": "apple",
     "content": "Shouldn't this go in the recycling?",
 		"approval": "disapprove"
   }, {
-    "date": "10/5/2016",
+    "date": "10/25/2016",
     "username": "annoyingorange",
     "content": "bet that pizza was real tasty ;)",
 		"approval": "neutral"
   }, {
-    "date": "10/5/2016",
+    "date": "10/25/2016",
     "username": "annoyingorange",
     "content": "I actually meant ramen",
 		"approval": "neutral"
   }]
 }, {
-	"date": "10/28/2016",
+	"date": "10/23/2016",
 	"title": "milk jug",
 	"description": "i drank some milk for the first time and didn't like it so i threw the jug away",
 	"type": "garbage",
 	"image": "/data/uploads/milkjug.jpg",
 	"comments": [{
-    "date": "10/28/2016",
+    "date": "10/23/2016",
     "username": "milkmyjugs",
     "content": "That's a waste, you can empty+rinse it out and then recycle!",
 		"approval": "disapprove"
   }, {
-    "date": "10/28/2016",
+    "date": "10/23/2016",
     "username": "RogerRevelle",
     "content": "^^",
 		"approval": "disapprove"
   }, {
-	  "date": "10/28/2016",
+	  "date": "10/23/2016",
 	  "username": "Apple",
 	  "content": "^^^ what they said",
 		"approval": "disapprove"
   }]
 }, {
-	"date": "10/28/2016",
+	"date": "10/21/2016",
 	"title": "Nasty Fruit",
 	"description": "These dropped off my neighbor's tree so I threw them in the trash. cool?",
 	"type": "garbage",
 	"image": "/data/uploads/nastyfruit.jpg",
 	"comments": [{
-		"date": "10/28/2016",
+		"date": "10/22/2016",
 		"username": "POON_GOON",
-		"content": "dude ew. but yea those can go in the garbage if you don't have a compost/yard waste bin.",
+		"content": "ew. yea those can go in the garbage if you don't have a compost/yard waste bin.",
 		"approval": "approve"
 	}]
 }, {
-	"date": "10/27/2016",
+	"date": "10/18/2016",
 	"title": "Yogurt drink",
 	"description": "I always throw these in the recycling but someone told me I shouldn't! What do I do with these?",
 	"type": "recycle",
 	"image": "/data/uploads/yogurt.jpg",
 	"comments": [{
-		"date": "10/28/2016",
+		"date": "10/20/2016",
 		"username": "recyclingryan204",
-		"content": "your friend was right, that kind of yogurt sticks to the inside and makes recycling hard. unless you scour the inside with a brush, just toss it.",
+		"content": "your friend was right, that kind of yogurt sticks to the inside and makes recycling hard. just toss it.",
 		"approval": "disapprove"
 	}]
 }]
