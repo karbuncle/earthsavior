@@ -1,0 +1,25 @@
+[{
+	"type": "item_count",
+  "year": 2016,
+  "title": "Items Disposed of (2016)",
+	"data": {
+    "garbage": [503, 197, 761, 223, 790, 117, 180, 758, 509, 282, 67],
+	  "recycle": [298, 212, 334, 290, 570, 516, 316, 821, 528, 661, 85]
+  }
+}, {
+  "type": "category_compare",
+  "title": "Garbage Peer Review (2016)",
+  "data": {
+    "approved": 3591,
+    "disapproved": 1083,
+    "unknown": 325
+  }
+}, {
+  "type": "category_compare",
+  "title": "Recyclable Peer Review (2016)",
+  "data": {
+    "approved": 2758,
+    "disapproved": 331,
+    "unknown": 1542
+  }
+}]

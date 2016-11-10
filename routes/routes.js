@@ -14,5 +14,11 @@ router
   .get('/forum', function(req, res) {
     res.render('forum.ejs', {title: "Feedback" });
   })
+  .get('/stat', function(req, res) {
+    res.render('stat.ejs', {title: "Statistics" });
+  })
+
+
+
 
 module.exports = router;
