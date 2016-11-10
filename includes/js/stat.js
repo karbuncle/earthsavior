@@ -58,14 +58,33 @@ jQuery(function($) {
         return {
           type: 'pie',
           data: {
-            labels: ['Approved', 'Disapproved', 'Uncertain'],
+            labels: ['Approved(at least 200 reviewers with at least 50% approval rate)', 'Disapproved(at least 200 reviewers with at least 50% disapproval rate)', 'Uncertain(less than 200 reviewers)'],
             datasets: [{
               data: [stat.data.approved, stat.data.disapproved, stat.data.unknown],
-              backgroundColor: ['#9ccc65', '#ef5350', '#eeeeee']
+              backgroundColor: ['#9ccc65', '#ef5350']
             }]
           },
           options: {
-            title: { text: stat.title }
+            title: { text: stat.title },
+            tooltips: { 
+              callbacks: { 
+                label: function(i, d) { return d.labels[i.index].replace(/\(.+\)/g, ''); } 
+              } 
+            }
+          }
+        };
+      case 'disapproved_objects':
+        return {
+          type: 'pie',
+          data: {
+            labels: ['Pizza Box', 'Banana Peel', 'Cup Ramen', 'Yogurt Drink', 'Milk Jug', 'Newspaper', 'Soda Can', 'Nasty Fruit', 'Other'],
+            datasets: [{
+              data: stat.data,
+              backgroundColor: ['#ffa726', '#ec407a', '#ab47bc', '#7e57c2', '#5c6bc0', '#26a69a', '#d4e157', '#26c6da']
+            }]
+          },
+          options: {
+            title: { text: stat.title },
           }
         };
     }

@@ -1,5 +1,9 @@
 <%- include('./partials/header', { activeItem: "forum" } ); %>
 <div class="container">
+	<div class="row center-align">
+		
+	
+	</div>
   <div id="spinner" class="valign-in-overlay preloader-wrapper big active">
     <div class="spinner-layer spinner-green-only">
       <div class="circle-clipper left">
@@ -22,5 +26,22 @@
     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Retry</a>
   </div>
 </div>
+<div class="fixed-action-btn hide-on-med-and-up">
+	<a href="#" class="btn-floating btn-large waves-effect waves-light orange z-depth-3">
+		<i class="material-icons">arrow_upward</i>
+	</a>
+</div>
 <script src="/js/forum.js"></script>
+<script type="text/javascript">
+	var $tip = $('<div></div>')
+	.append(
+		$('<i/>').addClass('material-icons').text('lightbulb_outline').css({'font-size': '30pt', 'float': 'left', 'margin': 'auto 0'})
+	)
+	.append(
+		$('<div/>')
+			.append($('<div/>').css('margin-left', '40px').html('<strong class="green-text text-lighten-2">Green</strong> items were classified as recyclable by submitter'))
+			.append($('<div/>').css('margin-left', '40px').html('<strong class="brown-text text-lighten-2">Brown</strong> items were classified as garbage by submitter'))
+	)
+	Materialize.toast($tip, 60e3, 'rounded')
+</script>
 <%- include ./partials/footer %>

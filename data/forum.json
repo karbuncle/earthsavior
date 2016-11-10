@@ -7,11 +7,13 @@
 	"comments": [{
     "date": "10/30/2016",
     "username": "apple",
-    "content": "nice pizza box :)"
+    "content": "nice pizza box :)",
+		"approval": "neutral"
   }, {
     "date": "10/30/2016",
     "username": "banana",
-    "content": "nice pizza box :)"
+    "content": "nice pizza box :)",
+		"approval": "neutral"
   }]
 }, {
 	"date": "10/29/2016",
@@ -22,11 +24,13 @@
 	"comments": [{
     "date": "10/30/2016",
     "username": "Cubsfan1990",
-    "content": "good choice, too many people incorrectly recycle those"
+    "content": "good choice, too many people incorrectly recycle those",
+		"approval": "approve"
   }, {
     "date": "10/30/2016",
     "username": "banana",
-    "content": "nice pizza box :)"
+    "content": "nice pizza box :)",
+		"approval": "neutral"
   }]
 }, {
   "date": "10/10/2016",
@@ -37,19 +41,23 @@
   "comments": [{
     "date": "10/10/2016",
     "username": "apple",
-    "content": "a generic soda can"
+    "content": "a generic soda can",
+		"approval": "neutral"
   }, {
     "date": "10/15/2016",
     "username": "banana",
-    "content": "are you sure that goes in recycle?"
+    "content": "are you sure that goes in recycle?",
+		"approval": "disapprove"
   }, {
     "date": "10/19/2016",
     "username": "apple",
-    "content": "btw, you sure that's a pizza box?"
+    "content": "btw, you sure that's a pizza box?",
+		"approval": "neutral"
   }, {
     "date": "10/20/2016",
     "username": "banana",
-    "content": "it apparently is not a pizza box. lol!"
+    "content": "it apparently is not a pizza box. lol!",
+		"approval": "neutral"
   }]
 }, {
   "date": "10/29/2016",
@@ -60,11 +68,13 @@
   "comments": [{
     "date": "10/30/2016",
     "username": "apple",
-    "content": "This sundays newspaper"
+    "content": "This sundays newspaper",
+		"approval": "neutral"
   }, {
     "date": "10/30/2016",
     "username": "banana",
-    "content": "mysterious newspaper"
+    "content": "mysterious newspaper",
+		"approval": "neutral"
   }]
 }, {
   "date": "10/12/2016",
@@ -75,11 +85,13 @@
   "comments": [{
     "date": "10/30/2016",
     "username": "apple",
-    "content": "oh wow a banana peel"
+    "content": "oh wow a banana peel",
+		"approval": "neutral"
   }, {
     "date": "10/30/2016",
     "username": "banana",
-    "content": "thats my peel!"
+    "content": "thats my peel!",
+		"approval": "neutral"
   }]
 }, {
   "date": "9/23/2016",
@@ -90,15 +102,18 @@
   "comments": [{
     "date": "10/2/2016",
     "username": "apple",
-    "content": "Shouldn't this go in the recycling?"
+    "content": "Shouldn't this go in the recycling?",
+		"approval": "disapprove"
   }, {
     "date": "10/5/2016",
     "username": "annoyingorange",
-    "content": "bet that pizza was real tasty ;)"
+    "content": "bet that pizza was real tasty ;)",
+		"approval": "neutral"
   }, {
     "date": "10/5/2016",
     "username": "annoyingorange",
-    "content": "I actually meant ramen"
+    "content": "I actually meant ramen",
+		"approval": "neutral"
   }]
 }, {
 	"date": "10/28/2016",
@@ -109,15 +124,18 @@
 	"comments": [{
     "date": "10/28/2016",
     "username": "milkmyjugs",
-    "content": "That's a waste, you can empty+rinse it out and then recycle!"
+    "content": "That's a waste, you can empty+rinse it out and then recycle!",
+		"approval": "disapprove"
   }, {
     "date": "10/28/2016",
     "username": "RogerRevelle",
-    "content": "^^"
+    "content": "^^",
+		"approval": "disapprove"
   }, {
 	  "date": "10/28/2016",
 	  "username": "Apple",
-	  "content": "^^^ what they said"
+	  "content": "^^^ what they said",
+		"approval": "disapprove"
   }]
 }, {
 	"date": "10/28/2016",
@@ -128,7 +146,8 @@
 	"comments": [{
 		"date": "10/28/2016",
 		"username": "POON_GOON",
-		"content": "dude ew. but yea those can go in the garbage if you don't have a compost/yard waste bin."
+		"content": "dude ew. but yea those can go in the garbage if you don't have a compost/yard waste bin.",
+		"approval": "approve"
 	}]
 }, {
 	"date": "10/27/2016",
@@ -139,6 +158,7 @@
 	"comments": [{
 		"date": "10/28/2016",
 		"username": "recyclingryan204",
-		"content": "your friend was right, that kind of yogurt sticks to the inside and makes recycling hard. unless you scour the inside with a brush, just toss it."
+		"content": "your friend was right, that kind of yogurt sticks to the inside and makes recycling hard. unless you scour the inside with a brush, just toss it.",
+		"approval": "disapprove"
 	}]
 }]

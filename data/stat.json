@@ -22,4 +22,12 @@
     "disapproved": 331,
     "unknown": 1542
   }
+}, {
+  "type": "disapproved_objects",
+  "title": "Disapproved Garbage (2016)",
+  "data": [85,762,2,4,10,2174,528,1391,40]
+}, {
+  "type": "disapproved_objects",
+  "title": "Disapproved Recyclable (2016)",
+  "data": [527,0,668,0,52,555,2203,991,1]
 }]

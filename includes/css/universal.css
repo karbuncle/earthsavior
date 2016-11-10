@@ -69,3 +69,16 @@ label {
 .auto-margin {
   margin: auto;
 }
+
+.thumb {
+  margin: 0 3px;
+}
+
+.thumb input[type=radio] + i.material-icons {
+  font-size: 30pt;
+}
+
+.thumb input[type=radio]:checked + i.material-icons {
+  font-size: 36pt;
+  color: #26a69a;
+}

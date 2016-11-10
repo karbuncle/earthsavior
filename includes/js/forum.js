@@ -98,7 +98,7 @@ jQuery(function ($) {
 
   function get_comment_card(comment) {
     var $cardWrapper = $('<div></div>')
-          .addClass('row');
+          .addClass(['row', 'comment-card'].join(' '));
     var $card = $('<div></div>')
           .addClass('card horizontal');
     var $user = $('<div></div>')
@@ -106,10 +106,20 @@ jQuery(function ($) {
           .append('<i class="material-icons large">face</i>')
           .append($('<h5 class="truncate"></h5>').text(comment.username));
     var $content = $('<p></p>').text(comment.content);
+    var $approval = $('<h6></h6>')
+          .addClass(['left-align', 'col s3'].join(' '))
+          .append(
+            $('<i/>')
+              .addClass('small material-icons')
+              .text((function(a) { 
+                if (a === 'approve') return 'thumb_up';
+                else if( a === 'disapprove') return 'thumb_down';
+                else return 'change_history';
+              })(comment.approval))
+          )
     var $date = $('<h6></h6>')
-          .addClass('right-align')
-          .css('padding-right', '5px')
-          .text(comment.date)
+          .addClass(['right-align', 'col s9', 'valign'].join(' '))
+          .text(comment.date);
     
     return $cardWrapper.append(
              $card
@@ -123,7 +133,10 @@ jQuery(function ($) {
                        .append($content)
                    )
                    .append(
-                     $('<div></div>').append($date)
+                     $('<div></div>')
+                       .addClass('valign-wrapper')
+                       .append($approval)
+                       .append($date)
                    )
                )
            );
@@ -134,7 +147,7 @@ jQuery(function ($) {
     var $pagebar = $('<ul></ul>').addClass(['pagination', 'center-align'].join(' ')).appendTo($appendTo);
     var $prev = $('<a href="#!"><i class="material-icons">chevron_left</i></a>');
     var $next = $('<a href="#!"><i class="material-icons">chevron_right</i></a>');
-    var $currParagraph;
+    var $currParagraph = $('<p/>').appendTo($appendTo);
     var currPage = 0;
     var currComment = 0;
     var goToPage = function (pageNum) {
@@ -144,18 +157,13 @@ jQuery(function ($) {
         var $pageLinks = $('li', $pagebar);
         var $activeLink = $pageLinks.filter('.active');
 
-        if ($pageLinks.index($activeLink) == pageNum) {
-          // active page is clicked, do nothing
-          return;
-        }
-        
         // changes pagination links
         $pageLinks.removeClass('active').addClass('waves-effect');
         $pageLinks.eq(pageNum).addClass('active').removeClass('waves-effect');
 
         // switches to the displayed page
-        var $pages = $appendTo.children('p').addClass('hide');
-        $pages.eq(pageNum - 1).removeClass('hide');
+        var $comments = $('.comment-card', $currParagraph).addClass('hide');
+        $comments.filter(':eq(' + (pageNum * 3 - 3)+ '), :eq(' + (pageNum * 3 - 2)+ '), :eq(' + (pageNum * 3 - 1)+ ')').removeClass('hide');
         
         var disableIf = function($link, condition) {
           if (condition) {
@@ -166,7 +174,7 @@ jQuery(function ($) {
           }
         };
         disableIf($prev.parent(), pageNum == 1);
-        disableIf($next.parent(), pageNum == $pages.length);
+        disableIf($next.parent(), pageNum == Math.ceil($comments.length / COMMENTS_PER_PAGE));
       }
     };
 
@@ -187,7 +195,6 @@ jQuery(function ($) {
       // for each comment,
       if (currComment++ % COMMENTS_PER_PAGE == 0) {
         // needs a new page(paragraph)
-        $currParagraph = $('<p></p>').appendTo($appendTo).addClass('hide');
         var $link = $('<a></a>')
               .click(goToPage(++currPage))
               .append(currPage);
@@ -195,7 +202,7 @@ jQuery(function ($) {
         // needs a new pagination link
         $next.parent().before($('<li></li>').append($link));
       }
-      $currParagraph.append(get_comment_card(comment));
+      $currParagraph.prepend(get_comment_card(comment));
     };
 
     var $commentBox = $('<ul></ul>')
@@ -229,6 +236,56 @@ jQuery(function ($) {
                            .text('Your Comment')
                        )
                    )
+                   .append(
+                     $('<div></div>')
+                       .addClass(['right-align', 'col s12'].join(' '))
+                       .append(
+                         $('<label></label>')
+                           .addClass('thumb')
+                           .attr('for', 'disapproval-' + commentCards)
+                           .append(
+                             $('<input/>')
+                               .addClass('hide')
+                               .attr({ type: 'radio', name: 'approval', value: 'disapprove', id: 'disapproval-' + commentCards})
+                           )
+                           .append(
+                             $('<i></i>')
+                               .addClass('material-icons')
+                               .text('thumb_down')
+                           )
+                       )
+                       .append(
+                         $('<label></label>')
+                           .addClass('thumb')
+                           .attr('for', 'neutral-' + commentCards)
+                           .append(
+                             $('<input/>')
+                               .addClass('hide')
+                               .attr({ type: 'radio', name: 'approval', value: 'neutral', id: 'neutral-' + commentCards})
+                               .prop('checked', true)
+                           )
+                           .append(
+                             $('<i></i>')
+                               .addClass('material-icons')
+                               .text('change_history')
+                           )
+                       )
+                       .append(
+                         $('<label></label>')
+                           .addClass('thumb')
+                           .attr('for', 'approval-' + commentCards)
+                           .append(
+                             $('<input/>')
+                               .addClass('hide')
+                               .attr({ type: 'radio', name: 'approval', value: 'approve', id: 'approval-' + commentCards})
+                           )
+                           .append(
+                             $('<i></i>')
+                               .addClass('material-icons')
+                               .text('thumb_up')
+                           )
+                       )
+                   )
                )
                .append(
                  $('<div></div>')
@@ -258,10 +315,11 @@ jQuery(function ($) {
                    addComment({
                      'username': 'You',
                      'content': $content.val(),
-                     'date': (new Date()).toLocaleDateString()
+                     'date': (new Date()).toLocaleDateString(),
+                     'approval': $(':checked', this).val()
                    });
                    this.reset();
-                   $('li:eq(-2) a', $pagebar).removeClass('disabled').click();
+                   $('a:eq(1)', $pagebar).click();
                    $('.collapsible-header', $commentBox).click();
                  } else {
                    $content.removeClass('valid').addClass('invalid')
@@ -269,7 +327,7 @@ jQuery(function ($) {
                })
            )
     ).collapsible();
-    $appendTo.append($commentBox);
+    $pagebar.before($commentBox);
     
     if (!comments.length) {
       // there are no comments
