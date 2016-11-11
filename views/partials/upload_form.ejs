@@ -17,22 +17,14 @@
       </div>
       <div class="card-content">
 				<div class="row hide message red-text">
-					<em>You need to choose an image to upload.</em>
+					<em>You need to choose an image to upload. Tap the green area above to choose.</em>
 				</div>
-        <div class="input-field">
-          <select id="option">
-            <option>Pizza Box</option>
-            <option>Banana Peel</option>
-            <option>Cup Ramen</option>
-            <option>Yogurt Drink</option>
-            <option>Milk Jug</option>
-            <option>Newspaper</option>
-            <option>Soda Can</option>
-            <option>Nasty Fruit</option>
-            <option>Other</option>
-          </select>
-          <label for="option">What is this?</label>
-        </div>
+				<div class="row">
+	        <div class="input-field col s12">
+						<input type="text" id="title" placeholder="Item name" class="validate"/>
+        	  <label for="title">What is this?</label>
+        	</div>
+				</div>
         <div class="row">
           <div class="input-field col s12">
             <textarea id="description" class="materialize-textarea"></textarea>

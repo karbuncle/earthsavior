@@ -2,7 +2,8 @@ jQuery(function ($) {
   (function fetch() {
     $.getJSON('/data/forum.json')
       .done(function(cards) {
-        cards.reduce(function($acc, card) { return $acc.append(get_card(card)); }, $('#forum'));
+        if (sessionStorage.myCards) cards = $.parseJSON(sessionStorage.myCards).concat(cards);
+        cards.reduce(function($acc, card, i) { return $acc.append(get_card(card, i)); }, $('#forum'));
         $('#spinner').addClass('hide');
       })
       .fail(function() {
@@ -15,7 +16,7 @@ jQuery(function ($) {
   })();
 
   var commentCards = 0;
-  function get_card(card) {
+  function get_card(card, card_num) {
     var $cardWrapper = $('<div></div>')
           .addClass('col s12 m6 l4');
 
@@ -75,7 +76,9 @@ jQuery(function ($) {
 
     var $revealContent = $('<div></div>');
     
-    pagination(card.comments, $revealContent);
+    var myComments = sessionStorage.myComments ? $.parseJSON(sessionStorage.myComments) : [];
+    myComments = myComments.length > card_num ? myComments[card_num] : []
+    pagination(card.comments.concat(myComments), $revealContent, card_num);
 
     commentCards++;
 
@@ -142,7 +145,7 @@ jQuery(function ($) {
            );
   }
 
-  function pagination(comments, $appendTo) {
+  function pagination(comments, $appendTo, card_num) {
     var COMMENTS_PER_PAGE = 3;
     var $pagebar = $('<ul></ul>').addClass(['pagination', 'center-align'].join(' ')).appendTo($appendTo);
     var $prev = $('<a href="#!"><i class="material-icons">chevron_left</i></a>');
@@ -191,8 +194,10 @@ jQuery(function ($) {
         if (!$(this).parent().hasClass('disabled'))
           (goToPage(currentPage() + 1))();
       });
-    var addComment = function(comment) {
+    var addComment = function(comment, isByUser) {
       // for each comment,
+      $('li', $pagebar).removeClass('disabled');
+      $('.no-comment', $currParagraph).remove();
       if (currComment++ % COMMENTS_PER_PAGE == 0) {
         // needs a new page(paragraph)
         var $link = $('<a></a>')
@@ -203,6 +208,15 @@ jQuery(function ($) {
         $next.parent().before($('<li></li>').append($link));
       }
       $currParagraph.prepend(get_comment_card(comment));
+
+      if (isByUser === true) {
+        // updates session
+        var myComments = sessionStorage.myComments ? $.parseJSON(sessionStorage.myComments) : [];
+        var thisCardComments = myComments[card_num] ? myComments[card_num] : (myComments[card_num] = []);
+        thisCardComments.push(comment);
+
+        sessionStorage.myComments = JSON.stringify(myComments);
+      }
     };
 
     var $commentBox = $('<ul></ul>')
@@ -243,7 +257,7 @@ jQuery(function ($) {
                          $('<label></label>')
                            .addClass('thumb')
                            .attr('for', 'disapproval-' + commentCards)
-                           .append(
+                           .prepend(
                              $('<input/>')
                                .addClass('hide')
                                .attr({ type: 'radio', name: 'approval', value: 'disapprove', id: 'disapproval-' + commentCards})
@@ -253,22 +267,31 @@ jQuery(function ($) {
                                .addClass('material-icons')
                                .text('thumb_down')
                            )
+                           .tooltip({
+                             delay: 50,
+                             position: 'bottom', 
+                             tooltip: 'Disapprove'
+                           })
                        )
                        .append(
                          $('<label></label>')
                            .addClass('thumb')
                            .attr('for', 'neutral-' + commentCards)
                            .append(
-                             $('<input/>')
+                             $('<input checked/>')
                                .addClass('hide')
                                .attr({ type: 'radio', name: 'approval', value: 'neutral', id: 'neutral-' + commentCards})
-                               .prop('checked', true)
                            )
                            .append(
                              $('<i></i>')
                                .addClass('material-icons')
                                .text('change_history')
                            )
+                           .tooltip({
+                             delay: 50,
+                             position: 'bottom', 
+                             tooltip: 'Neutral'
+                           })
                        )
                        .append(
                          $('<label></label>')
@@ -284,6 +307,11 @@ jQuery(function ($) {
                                .addClass('material-icons')
                                .text('thumb_up')
                            )
+                           .tooltip({
+                             delay: 50,
+                             position: 'bottom', 
+                             tooltip: 'Approve'
+                           })
                        )
                    )
                )
@@ -313,11 +341,11 @@ jQuery(function ($) {
 
                  if ($content.val()) {
                    addComment({
-                     'username': 'You',
+                     'username': Cookies.get('username'),
                      'content': $content.val(),
                      'date': (new Date()).toLocaleDateString(),
                      'approval': $(':checked', this).val()
-                   });
+                   }, true);
                    this.reset();
                    $('a:eq(1)', $pagebar).click();
                    $('.collapsible-header', $commentBox).click();
@@ -331,18 +359,10 @@ jQuery(function ($) {
     
     if (!comments.length) {
       // there are no comments
-      var $valign = $('<div></div>')
-        .addClass(['valign', 'auto-margin'].join(' '))
-        .text('There are no comments for this upload.');
-
-      $appendTo
-        .addClass([
-          'overlay', 
-          'valign-wrapper', 
-          'grey-text text-darken-4'
-        ].join(' '))
-        .css('z-index', '-1')
-        .append($valign);
+      $('li', $pagebar).addClass('disabled');
+      $currParagraph
+        .addClass('grey-text text-darken-4')
+        .append($('<span/>').addClass('no-comment').text('There are no comments for this upload.'));
       return;
     }
 

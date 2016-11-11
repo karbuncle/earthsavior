@@ -36,14 +36,32 @@ jQuery(function($) {
   $('form.upload-form').submit(function(evt) {
     // don't actually submit
     evt.preventDefault();
-    var $file = $(this).find(':file');
-    var $message = $(this).find('.message');
+    var $this = $(this);
+    var $file = $this.find(':file');
+    var $message = $this.find('.message');
 
     if ($file[0].files && !$file[0].files[0]) {
       // there is no file selected.
       // output an error
       $message.removeClass('hide');
     } else {
+      // saves upload to local storage
+      if (!sessionStorage.myCards) sessionStorage.myCards = JSON.stringify([]);
+      var data = $.parseJSON(sessionStorage.myCards);
+      data.unshift({
+        date: (new Date()).toLocaleDateString(),
+        title: $('#title', $this).val(),
+        description: $('#description', $this).val(),
+        type: $this.parent().data('type'),
+        image: $('.image-preview', $this).attr('src'),
+        comments: []
+      });
+      sessionStorage.myCards = JSON.stringify(data);
+
+      var comments = !sessionStorage.myComments? [] : $.parseJSON(sessionStorage.myComments);
+      comments.unshift([]);
+      sessionStorage.myComments = JSON.stringify(comments);
+
       this.reset();
       $(this).find(':file').trigger('change');
       $('#upload-confirm').openModal();
@@ -76,7 +94,8 @@ jQuery(function($) {
     if ($username.val() && $password.val()) {
       // if both fields are filled, 
       // goes to home page
-      window.location.href = "/";
+      Cookies.set('username', $username.val());
+      window.location.href = "/home";
     }
   });
 

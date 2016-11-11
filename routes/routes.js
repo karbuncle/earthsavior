@@ -3,10 +3,10 @@ var router = express.Router();
 
 router
   .get('/', function(req, res) {
-    res.render('home.ejs', { title: "Home" });
-  })
-  .get('/login', function(req, res) {
     res.render('login.ejs', { title: "Welcome" });
+  })
+  .get('/home', function(req, res) {
+    res.render('home.ejs', { title: "Home" });
   })
   .get('/uploads', function(req, res) {
     res.render('uploads.ejs', { title: "Uploads" });
