@@ -6,22 +6,22 @@
       <li class="tab col s6"><a href="#recycle">Recycle</a></li>
     </ul>
 
-  <div data-type="garbage" class="col s12 hide-on-large-only">
-    <%- include ./partials/upload_form.ejs %>
+  <div id="garbage" data-type="garbage" class="col s12 hide-on-large-only">
+		<%- include('./partials/upload_form.ejs', { color: "brown" } ); %>
   </div>
-  <div data-type="recycle" class="col s12 hide-on-large-only">
-    <%- include ./partials/upload_form.ejs %>
+  <div id="recycle" data-type="recycle" class="col s12 hide-on-large-only">
+		<%- include('./partials/upload_form.ejs', { color: "green" } ); %>
   </div>
 </div>
 <div class="container">
   <div class="row hide-on-med-and-down">
     <div data-type="garbage" class="col m6">
       <h2 class="center">Garbage</h2>
-      <%- include ./partials/upload_form.ejs %>
+			<%- include('./partials/upload_form.ejs', { color: "brown" } ); %>
     </div>
     <div data-type="recycle" class="col m6">
       <h2 class="center">Recycling</h2>
-      <%- include ./partials/upload_form.ejs %>
+			<%- include('./partials/upload_form.ejs', { color: "green" } ); %>
     </div>
   </div>
 </div>

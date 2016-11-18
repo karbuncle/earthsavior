@@ -1,12 +1,12 @@
 <form class="row upload-form">
   <div class="col s12">
     <div class="card">
-      <div class="card-image green darken-4 file-field input-field center-align upload-card">
+      <div class="card-image <%= color %> darken-4 file-field input-field center-align upload-card">
         <div class="hide file-path-wrapper">
           <input class="file-path" type="text" />
         </div>
         <div class="image-upload">
-          <i class="material-icons display green-text lighten-4 valign">photo</i>
+          <i class="material-icons display <%= color %>-text lighten-4 valign">photo</i>
         </div>
         <img class="image-preview hide" />
 				<div class="overlay image-preview-overlay hide"></div>
@@ -17,7 +17,7 @@
       </div>
       <div class="card-content">
 				<div class="row hide message red-text">
-					<em>You need to choose an image to upload. Tap the green area above to choose.</em>
+					<em>You need to choose an image to upload. Tap the area above to choose.</em>
 				</div>
 				<div class="row">
 	        <div class="input-field col s12">

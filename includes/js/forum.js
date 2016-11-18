@@ -40,13 +40,19 @@ jQuery(function ($) {
           .addClass('activator')
           .attr('src', card.image);
 
-    var $imageTitle = $('<span></span>')
+    var $imageType = $('<span></span>')
           .addClass([
              'card-title',
              'grey darken-4 white-text'
           ].join(' '))
-          .css({ 'margin': '20px', 'padding': '5px' })
-          .text(card.date);
+          .css({ 
+             'pointer-events': 'none',
+             'left': '20px', 
+             'bottom': '20px',
+             'padding': '5px',
+             'text-transform': 'capitalize'
+          })
+          .text(card.type);
 
     var $cardContentWrapper = $('<div></div>')
           .addClass('card-content');
@@ -72,7 +78,7 @@ jQuery(function ($) {
     var $revealTitle = $('<span></span>')
           .addClass('card-title')
           .text([card.date, card.title].join(' - '))
-          .after('<i class="material-icons right">close</i>');
+          .append('<i class="material-icons right">close</i>');
 
     var $revealContent = $('<div></div>');
     
@@ -86,7 +92,7 @@ jQuery(function ($) {
              $card.append(
                $cardImageWrapper
                  .append($cardImage)
-                 .append($imageTitle)
+                 .append($imageType)
              ).append(
                $cardContentWrapper
                  .append($cardTitle)
@@ -269,7 +275,7 @@ jQuery(function ($) {
                            )
                            .tooltip({
                              delay: 50,
-                             position: 'bottom', 
+                             position: 'above', 
                              tooltip: 'Disapprove'
                            })
                        )
@@ -289,7 +295,7 @@ jQuery(function ($) {
                            )
                            .tooltip({
                              delay: 50,
-                             position: 'bottom', 
+                             position: 'above', 
                              tooltip: 'Neutral'
                            })
                        )
@@ -309,7 +315,7 @@ jQuery(function ($) {
                            )
                            .tooltip({
                              delay: 50,
-                             position: 'bottom', 
+                             position: 'above', 
                              tooltip: 'Approve'
                            })
                        )
