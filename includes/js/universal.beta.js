@@ -33,20 +33,51 @@ jQuery(function($) {
   });
 
   // upload form submit behavior
-  $('form.upload-form').submit(function(evt) {
+  $('form.upload-form')
+  .each(function() {
+    var $this = $(this);
+    var $stepOne = $('div.step-one', $this);
+    var $stepTwo = $('div.step-two', $this);
+
+    $('button.step-forward', $stepOne).click(function() {
+      var $file = $(':file', $stepOne);
+      var $message = $('.message', $stepOne);
+
+      if ($file[0].files && !$file[0].files[0]) {
+        // there is no file selected.
+        // output an error
+        $message.removeClass('hide');
+        ga('send', 'event', 'upload-form', 'validation-failure');
+      } else {
+        $stepOne.addClass('hide');
+        $stepTwo.removeClass('hide');
+        $message.addClass('hide');
+        $('a.step-one', $this).removeClass('white-text');
+        $('a.step-two', $this).addClass('white-text');
+      }
+    });
+
+    $('button.step-back', $stepTwo).click(function() {
+      $stepOne.removeClass('hide');
+      $stepTwo.addClass('hide');
+      $('a.step-one', $this).addClass('white-text');
+      $('a.step-two', $this).removeClass('white-text');
+    });
+  })
+  .submit(function(evt) {
     // don't actually submit
     evt.preventDefault();
     var $this = $(this);
-    var $file = $this.find(':file');
-    var $message = $this.find('.message');
+    var $title = $('#title', $this);
 
-    if ($file[0].files && !$file[0].files[0]) {
-      // there is no file selected.
-      // output an error
-      $message.removeClass('hide');
+    if (!$title.val()) {
+      // user did not give a title
+      // do not allow upload
+      $title.addClass('invalid');
       ga('send', 'event', 'upload-form', 'validation-failure');
     } else {
       // saves upload to local storage
+      $title.removeClass('invalid');
       if (!sessionStorage.myCards) sessionStorage.myCards = JSON.stringify([]);
       var data = $.parseJSON(sessionStorage.myCards);
       data.unshift({
@@ -64,9 +95,37 @@ jQuery(function($) {
       sessionStorage.myComments = JSON.stringify(comments);
 
       this.reset();
-      $(this).find(':file').trigger('change');
+      $(':file', $this).trigger('change');
       $('#upload-confirm').openModal();
+
+      // goes back to tab 1
+      $('button.step-back', $this).click();
     }
+  });
+  
+  // upload form step breadcrumb
+  $('a.step-one').click(function() {
+    var $this = $(this);
+    if (!$this.hasClass('white-text')) {
+      // the current tab is step two
+      // triggers a click on the step back button
+      $this.closest('form').find('div.step-two .step-back').click();
+    }
+  })
+  // triggers the click event
+  .click();
+
+  $('a.step-two').click(function() {
+    var $this = $(this);
+    if (!$this.hasClass('white-text')) {
+      // the current tab is step one
+      // triggers a click on the step forward button
+      $this.closest('form').find('div.step-one .step-forward').click();
+    }
+  });
+
+  $('a.choose-file').click(function () {
+    $(this).closest('form').find(':file').click();
   });
 
   // login form validation
