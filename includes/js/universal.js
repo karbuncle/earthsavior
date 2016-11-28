@@ -39,13 +39,21 @@ jQuery(function($) {
     var $this = $(this);
     var $file = $this.find(':file');
     var $message = $this.find('.message');
+    var $title = $this.find('#title');
 
     if ($file[0].files && !$file[0].files[0]) {
       // there is no file selected.
       // output an error
       $message.removeClass('hide');
       ga('send', 'event', 'upload-form', 'validation-failure');
-    } else {
+    } 
+
+    if (!$title.val()) {
+      $title.addClass('invalid');
+      ga('send', 'event', 'upload-form', 'validation-failure');
+    }
+    
+    if (!$title.hasClass('invalid') && !$message.hasClass('hide')) {
       // saves upload to local storage
       if (!sessionStorage.myCards) sessionStorage.myCards = JSON.stringify([]);
       var data = $.parseJSON(sessionStorage.myCards);
