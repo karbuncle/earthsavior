@@ -46,14 +46,14 @@ jQuery(function($) {
       // output an error
       $message.removeClass('hide');
       ga('send', 'event', 'upload-form', 'validation-failure');
-    } 
+    }
 
     if (!$title.val()) {
       $title.addClass('invalid');
       ga('send', 'event', 'upload-form', 'validation-failure');
     }
     
-    if (!$title.hasClass('invalid') && !$message.hasClass('hide')) {
+    if (!$title.hasClass('invalid') && $message.hasClass('hide')) {
       // saves upload to local storage
       if (!sessionStorage.myCards) sessionStorage.myCards = JSON.stringify([]);
       var data = $.parseJSON(sessionStorage.myCards);
@@ -74,6 +74,13 @@ jQuery(function($) {
       this.reset();
       $(this).find(':file').trigger('change');
       $('#upload-confirm').openModal();
+    }
+  }).find(':text').change(function() {
+    var $this = $(this);
+    if ($this.val()) {
+      $this.removeClass('invalid');
+    } else {
+      $this.addClass('invalid');
     }
   });
 
