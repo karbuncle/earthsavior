@@ -275,7 +275,7 @@ jQuery(function ($) {
                            )
                            .tooltip({
                              delay: 50,
-                             position: 'above', 
+                             position: 'top',
                              tooltip: 'Disapprove'
                            })
                        )
@@ -295,7 +295,7 @@ jQuery(function ($) {
                            )
                            .tooltip({
                              delay: 50,
-                             position: 'above', 
+                             position: 'top',
                              tooltip: 'Neutral'
                            })
                        )
@@ -315,7 +315,7 @@ jQuery(function ($) {
                            )
                            .tooltip({
                              delay: 50,
-                             position: 'above', 
+                             position: 'top',
                              tooltip: 'Approve'
                            })
                        )
