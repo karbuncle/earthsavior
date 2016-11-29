@@ -3,22 +3,19 @@ var router = express.Router();
 
 router
   .get('/', function(req, res) {
-    res.render('login.ejs', { title: "Welcome", beta: false });
+    res.render('login.ejs', { title: "Welcome" });
   })
   .get('/home', function(req, res) {
-    res.render('home.ejs', { title: "Home", beta: false });
+    res.render('home.ejs', { title: "Home" });
   })
   .get('/uploads', function(req, res) {
-    res.render('uploads.ejs', { title: "Uploads", beta: false });
-  })
-  .get('/uploads/beta', function(req, res) {
-    res.render('uploads.ejs', { title: "Uploads", beta: true });
+    res.render('uploads.ejs', { title: "Uploads" });
   })
   .get('/forum', function(req, res) {
-    res.render('forum.ejs', {title: "Feedback", beta: false });
+    res.render('forum.ejs', {title: "Feedback" });
   })
   .get('/stat', function(req, res) {
-    res.render('stat.ejs', {title: "Statistics", beta: false });
+    res.render('stat.ejs', {title: "Statistics" });
   })
 
 

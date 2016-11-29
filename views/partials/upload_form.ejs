@@ -1,38 +1,64 @@
 <form class="row upload-form">
   <div class="col s12">
     <div class="card">
-      <div class="card-image <%= color %> darken-4 file-field input-field center-align upload-card">
-        <div class="hide file-path-wrapper">
-          <input class="file-path" type="text" />
-        </div>
-        <div class="image-upload">
-          <i class="material-icons display <%= color %>-text lighten-4 valign">photo</i>
-        </div>
-        <img class="image-preview hide" />
-				<div class="overlay image-preview-overlay hide"></div>
-        <div class="card-title">
-          Today is <u><%= (new Date()).toLocaleDateString() %></u> 
-        </div>
-        <input type="file"/>
-      </div>
-      <div class="card-content">
-				<div class="row hide message red-text">
-					<em>You need to choose an image to upload. Tap the area above to choose.</em>
+			<nav class="light-blue darken-3">
+				<div class="nav-wrapper">
+					<div class="col s12">
+						<a href="#!" class="step-one breadcrumb">1: Upload</a>
+						<a href="#!" class="step-two breadcrumb">2: Describe</a>
+						<a href="#!" class="breadcrumb hide">Dummy</a>
+					</div>
 				</div>
-				<div class="row">
-	        <div class="input-field col s12">
-						<input type="text" id="title" placeholder="Item name" class="validate"/>
-        	  <label for="title">What is this?</label>
-        	</div>
+			</nav>
+			<div class="step-one hide">
+    	  <div class="card-image <%= color %> darken-4 file-field input-field center-align upload-card">
+    	    <div class="hide file-path-wrapper">
+    	      <input class="file-path" type="text" />
+    	    </div>
+    	    <div class="image-upload">
+    	      <i class="material-icons display <%= color %>-text lighten-4 valign">photo</i>
+    	    </div>
+    	    <img class="image-preview hide" />
+					<div class="overlay image-preview-overlay hide"></div>
+    	    <div class="card-title">
+    	      Today is <u><%= (new Date()).toLocaleDateString() %></u> 
+    	    </div>
+    	    <input type="file" id="file"/>
+    	  </div>
+				<div class="card-content">
+					<div class="row hide message red-text">
+						<em>You need to choose an image to upload. Tap the area above to choose.</em>
+					</div>
+    	    <div class="row">
+    	      <div class="input-field col s12">
+							<a href="#!" class="choose-file">Choose an image</a> to upload.
+    					<button type="button" class="right btn-medium btn-flat waves-effect waves-light step-forward">Next step<i class="material-icons left">chevron_right</i></button>
+						</div>
+					</div>
 				</div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="description" class="materialize-textarea"></textarea>
-            <label for="description">A short description about this item</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="right btn-large btn-flat waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+			</div>
+			<div class="step-two hide">
+    	  <div class="card-content">
+					<div class="row">
+	  	      <div class="input-field col s12">
+							<input type="text" id="title" placeholder="Item name" class="validate"/>
+    	    	  <label for="title" data-error="Item name is required">What is it?</label>
+    	    	</div>
+					</div>
+    	    <div class="row">
+    	      <div class="input-field col s12">
+    	        <textarea id="description" class="materialize-textarea"></textarea>
+    	        <label for="description">A short description about this item</label>
+    	      </div>
+    	    </div>
+    	    <div class="row">
+    	      <div class="input-field col s12">
+    					<button class="right btn-medium btn-flat waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+    					<button type="button" class="right btn-medium btn-flat waves-effect waves-light step-back">Step back<i class="material-icons left">chevron_left</i></button>
+						</div>
+					</div>
+    	  </div>
+    	</div>
+		</div>
   </div>
 </form>
